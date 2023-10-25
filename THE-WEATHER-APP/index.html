@@ -13,27 +13,149 @@
     <input type="text" placeholder="ENTER CITY NAME" spellcheck="false">
      <button><img src="https://img.icons8.com/?size=50&id=132&format=png" alt=""></button>
 </div>
-<div class="weather"></div>
- <img src="https://img.icons8.com/?size=48&id=MVj2tmasj0Pp&format=png" alt="rain showers icon" class="weather-icon">
+<div class="error">
+  <p>
+    Invalid city name
+  </p>
+</div>
+<div class="weather">
+ <img src="https://img.icons8.com/?size=50&id=7358&format=png" alt="rain showers icon" class="weather-icon">
   <h1 class="temp">22°C</h1>
   <h2 class="city">Cape Town</h2>
   <div class="details">
     <div class="col">
-       <img src="https://img.icons8.com/?size=48&id=LVlw7ED5WjlZ&format=png" alt="">
+       <img src="https://img.icons8.com/?size=80&id=L61Zj33o9RHr&format=png" alt="">
        <div>
         <p class="humidity">50%</p>
         <p>Humidity</p>
        </div>
     </div>
     <div class="col">
-        <img src="https://img.icons8.com/?size=48&id=oMdcU92GFKlj&format=png" alt="">
+        <img src="https://img.icons8.com/?size=80&id=aTP_RPVthhrW&format=png" alt="">
         <div>
          <p class="wind">15km/hr</p>
          <p>Wind Speed</p>
         </div>
   </div>
 
-
 </div>
+</div>
+
+
+<script>
+
+const apiKey = "8778d272231e269cdb89a725eef54ebd";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const searchBox = document.querySelector(".search input");
+const searchBtn = document.querySelector(".search button")
+const weatherIcon= document.querySelector(".weather-icon")
+
+
+async function checkWeather(city){
+ const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+
+if(response.status == 404)
+{
+  document.querySelector(".error").style.display ="block";
+  document.querySelector(".weather").style.display ="none";
+}
+else
+{
+  var data = await response.json();
+
+
+document.querySelector(".city").innerHTML = data.name;
+document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+document.querySelector(".wind").innerHTML = Math.round(data.wind.speed)+ "km/hr";
+
+if(data.weather[0].main == "Clouds"){
+
+
+    weatherIcon.src ="https://img.icons8.com/?size=50&id=2854&format=png";
+    }
+
+    else if(data.weather[0].main == "Clear"){
+      weatherIcon.src ="https://img.icons8.com/?size=80&id=jsBKybsYlg0d&format=png";
+
+    }
+
+    else if(data.weather[0].main == "Rain"){
+      weatherIcon.src ="https://img.icons8.com/?size=50&id=656&format=png";
+
+    }
+    else if(data.weather[0].main == "Drizzle"){
+      weatherIcon.src ="https://img.icons8.com/?size=50&id=7358&format=png";
+
+    }
+    else if(data.weather[0].main == "Mist"){
+      weatherIcon.src ="https://img.icons8.com/?size=80&id=67657&format=png";
+
+    }
+    else if(data.weather[0].main == "Drizzle"){
+      weatherIcon.src ="https://img.icons8.com/?size=80&id=jsBKybsYlg0d&format=png";
+
+    }
+    else if(data.weather[0].main == "Sunny"){
+      weatherIcon.src ="https://img.icons8.com/?size=50&id=648&format=png";
+
+    }
+   
+    document.querySelector(".weather").style.display="block";
+    document.querySelector(".error").style.display ="none";
+}
+
+
+ var data = await response.json();
+
+
+document.querySelector(".city").innerHTML = data.name;
+document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+document.querySelector(".wind").innerHTML = Math.round(data.wind.speed)+ "km/hr";
+
+if(data.weather[0].main == "Clouds"){
+
+
+    weatherIcon.src ="https://img.icons8.com/?size=50&id=2854&format=png";
+    }
+
+    else if(data.weather[0].main == "Clear"){
+      weatherIcon.src ="https://img.icons8.com/?size=80&id=jsBKybsYlg0d&format=png";
+
+    }
+
+    else if(data.weather[0].main == "Rain"){
+      weatherIcon.src ="https://img.icons8.com/?size=50&id=656&format=png";
+
+    }
+    else if(data.weather[0].main == "Drizzle"){
+      weatherIcon.src ="https://img.icons8.com/?size=50&id=7358&format=png";
+
+    }
+    else if(data.weather[0].main == "Mist"){
+      weatherIcon.src ="https://img.icons8.com/?size=80&id=67657&format=png";
+
+    }
+    else if(data.weather[0].main == "Drizzle"){
+      weatherIcon.src ="https://img.icons8.com/?size=80&id=jsBKybsYlg0d&format=png";
+
+    }
+    else if(data.weather[0].main == "Sunny"){
+      weatherIcon.src ="https://img.icons8.com/?size=50&id=648&format=png";
+
+    }
+    
+}
+
+
+searchBtn.addEventListener("click", ()=>{
+  checkWeather(searchBox.value);
+})
+
+
+</script>
+
+
 </body>
 </html>
