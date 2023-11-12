@@ -12,37 +12,12 @@ body{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height:110vh;
     width:100%;
 }
 
     
 
-/**#navbar ul{
-    align-items: center;
-    display:inline-flex;
-    justify-content:space-between;
-    width:95%;
-    
-    
-
-    
-
-}
-#navbar li{
-    list-style: none;
-    
-
-}
- #navbar a{
-    text-decoration: none;
-    color: gold;
-    font-family: ;
-    font-size: 20px;
- }
- #navbar h1{
-    color: #fff;
- }*/
  #header{
     display: flex;
     padding-top: 8px;
@@ -60,49 +35,48 @@ body{
 
  }
  .two{
-    margin-left: 200px;
+    margin-left: 170px;
     
  }
-
- .two li{
+ li{
     list-style: none;
-    
  }
- 
-.two a{
-    color: gold;
-    text-decoration: none;
-   
-}
 
- .two ul{
+ 
+a{
+ text-decoration: none;
+    
+    color:gold;
+
+    
+     
+}
+a:hover{
+ width: 100%;
+ cursor: pointer;
+ color:white;
+ border-bottom-width:100%;
+ border-bottom: 2px solid gold;
+    border-radius:2px;
+    }
+
+ul{
     display: flex;
     }
 
-
-
-    .three{
+ .three{
 margin-left:280px;  
  }
- .three ul{
-    display: flex;
-}
- .three li{
-    list-style: none;
- }
-
- .three a {
-    color:gold;
-    text-decoration: none;
- }
+ 
+ 
 .front{
     width:42%;
     height:40vh;
-    
-    flex-wrap:wrap-reverse;
+    flex-wrap:wrap;
     bottom:0;
     position: absolute;
     left: 80px;
+    margin-top: 200px;
 }
 .front h2{
     font-size:45px;
@@ -113,4 +87,9 @@ p
 font-family: 'Pontano Sans', sans-serif;
 /*font-family: 'Slabo 27px', serif;*/
     color: white;
+}
+
+.three li:nth-child(1){
+    border-right:2px solid gold;
+    padding-right: 15px;
 }
