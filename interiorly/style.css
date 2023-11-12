@@ -1,0 +1,116 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    background:url(https://c.stocksy.com/a/ZcyH00/z9/4284607.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width:100%;
+}
+
+    
+
+/**#navbar ul{
+    align-items: center;
+    display:inline-flex;
+    justify-content:space-between;
+    width:95%;
+    
+    
+
+    
+
+}
+#navbar li{
+    list-style: none;
+    
+
+}
+ #navbar a{
+    text-decoration: none;
+    color: gold;
+    font-family: ;
+    font-size: 20px;
+ }
+ #navbar h1{
+    color: #fff;
+ }*/
+ #header{
+    display: flex;
+    padding-top: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+ }
+ #header div *{
+    margin-left:10px;
+}
+
+ .one a{
+    color:white;
+    text-decoration: none;
+    
+
+ }
+ .two{
+    margin-left: 200px;
+    
+ }
+
+ .two li{
+    list-style: none;
+    
+ }
+ 
+.two a{
+    color: gold;
+    text-decoration: none;
+   
+}
+
+ .two ul{
+    display: flex;
+    }
+
+
+
+    .three{
+margin-left:280px;  
+ }
+ .three ul{
+    display: flex;
+}
+ .three li{
+    list-style: none;
+ }
+
+ .three a {
+    color:gold;
+    text-decoration: none;
+ }
+.front{
+    width:42%;
+    height:40vh;
+    
+    flex-wrap:wrap-reverse;
+    bottom:0;
+    position: absolute;
+    left: 80px;
+}
+.front h2{
+    font-size:45px;
+    color:#fff;
+}
+p
+{
+font-family: 'Pontano Sans', sans-serif;
+/*font-family: 'Slabo 27px', serif;*/
+    color: white;
+}
