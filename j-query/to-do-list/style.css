@@ -52,8 +52,7 @@ ul li{
     border-radius: 50px;
     margin: 15px 0;
     padding: 10px;
-    position: relative;
-
+    
 }
 ul .fa-check, .fa-trash{
     position: absolute;
