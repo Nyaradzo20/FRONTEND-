@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -47,6 +47,13 @@
             height: 40px;
             font-size: medium;
             background-color: aquamarine;
+        }
+
+      
+        a {
+            color: black;
+            
+            text-decoration: none;
         }
 
         .spinner {
@@ -143,8 +150,10 @@
             <button class="new-quote" id="new-quotee">
                 Generate a new quote
             </button>
-            <button class="new-tweet" id="tweet">
-                Tweet it!
+            <button><a class="new-tweet" id="tweet" target="_blank" rel="noreferrer">
+                 Tweet it!
+            </a>
+            
             </button>
         </div>
     </div>
@@ -153,9 +162,11 @@
     <script>
         const newQuotebtn = document.querySelector('#new-quotee');
         newQuotebtn.addEventListener('click', getQuote);
+
         const endpoint = 'https://api.whatdoestrumpthink.com/api/v1/quotes/random';
         const spinner = document.querySelector('#js-spinner');
-        const twitterButton = document.querySelector('#js-tweet');
+        const twitterButton = document.querySelector('#tweet');
+        
 
 
 
@@ -174,6 +185,7 @@
                 const json = await response.json();
                 displayQuote(json.message);
                 setTweetButton(json.message);
+
             }
             catch {
 
@@ -193,10 +205,10 @@
             quoteText.textContent = quote;
         }
 
- function setTweetButton (quote) {
-twitterButton.setAttribute('href', `https://twitter.com/share?text=${quote} - Donald Trump`);
-}
-getQuote();
+        function setTweetButton(quote) {
+            twitterButton.setAttribute('href', `https://twitter.com/share?text=${quote} - Donald Trump`);
+        }
+        getQuote();
     </script>
 </body>
 
